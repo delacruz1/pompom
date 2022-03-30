@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Header.css";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import Input from "@mui/material/Input";
 import Box from "@mui/material/Box";
@@ -33,6 +31,8 @@ const Header = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
+
+  //Todo: when user is logged in, keep track of # of pomos completed, etc. 
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -112,7 +112,7 @@ const Header = () => {
         <Box sx={style}>
           <form
             action="app__signin"
-            sx={{ display: "flex", flexDirection: "column" }}
+            sx={{ display: "flex", flexDirection: "column",}}
           >
             <center>
               <Input
@@ -139,17 +139,8 @@ const Header = () => {
 
       <AppBar position="fixed">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            pompom
+            Pompom
           </Typography>
 
           {user ? (
@@ -158,10 +149,10 @@ const Header = () => {
             </Button>
           ) : (
             <div className="loginContainer">
-              <Button onClick={() => setOpenSignIn(true)} color="inherit">
+              <Button variant="contained" onClick={() => setOpenSignIn(true)} color="primary">
                 Sign In
               </Button>
-              <Button onClick={() => setOpen(true)} color="inherit">
+              <Button variant="contained" onClick={() => setOpen(true)} color="inherit">
                 Sign Up
               </Button>
             </div>

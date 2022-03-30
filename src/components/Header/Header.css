@@ -1,0 +1,7 @@
+.loginContainer {
+    display: flex;
+    gap: 10px;
+}
+.loginContainer Button {
+    color: black;
+}
