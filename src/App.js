@@ -7,6 +7,8 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabPanel from "@mui/lab/TabPanel";
 import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link"
 
 function App() {
   document.title ="Pompom | Pomodoro Timer"
@@ -49,6 +51,9 @@ function App() {
             </TabPanel>
           </Card>
         </TabContext>
+        <div>
+          <Typography variant="subtitle1" color="white">Made by <Link href="https://joshdelacruz.com">Josh Dela Cruz</Link></Typography>
+        </div>
       </div>
     </div>
   );
