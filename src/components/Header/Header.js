@@ -142,7 +142,6 @@ const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Pompom
           </Typography>
-
           {user ? (
             <Button color="inherit" onClick={() => auth.signOut()}>
               Logout
