@@ -31,6 +31,7 @@ function Timer({ name, mins, secs, startingMessage }) {
           (difference % (1000 * 60 * 60)) / (1000 * 60)
         );
         var secondsLeft = Math.floor((difference % (1000 * 60)) / 1000);
+        document.title = `${minutesLeft}:${secondsLeft} remaining!`
         setMinutes(minutesLeft);
         setSeconds(secondsLeft);
         if (secondsLeft < 10) {
@@ -38,6 +39,7 @@ function Timer({ name, mins, secs, startingMessage }) {
         }
 
         if (minutesLeft <= 0 && secondsLeft <= 0) {
+          document.title = `Done!`
           setMessage("Done!");
           alarmSound.play();
           clearInterval(interval);
@@ -55,6 +57,7 @@ function Timer({ name, mins, secs, startingMessage }) {
   //Side effect hook handling reset of the timer
   useEffect(() => {
       return () => {
+        document.title = `Pompom | Pomodoro Timer`
         setMinutes(mins);
         setSeconds(secs);
         setMessage(startingMessage);

@@ -26,7 +26,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <div className="app__cardContainer">
         <TabContext value={value}>
           <Tabs value={value} onChange={handleChange} aria-label="timer tabs">
@@ -126,7 +125,7 @@ function App() {
         <div>
           <center>
             <Typography variant="subtitle1" color="white">
-              Pomodoro tracking for users coming soon!
+              User features coming soon!
             </Typography>
             <Typography variant="subtitle1" color="white">
               Made by{" "}
